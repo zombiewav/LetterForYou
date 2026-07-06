@@ -695,95 +695,89 @@ function Reveal({ onComplete }: { onComplete: () => void }) {
 
   useEffect(() => {
     const ts = [
-      setTimeout(() => setStep(1), 2600),
-      setTimeout(() => setStep(2), 4700),
-      setTimeout(() => setStep(3), 6200),
-      setTimeout(onComplete, 8200),
+      setTimeout(() => setStep(1), 2200),
+      setTimeout(() => setStep(2), 3200),
+      setTimeout(() => setStep(3), 4200),
+      setTimeout(onComplete, 5200),
     ];
     return () => ts.forEach(clearTimeout);
   }, [onComplete]);
 
   return (
     <div
-      className="fixed inset-0 flex flex-col items-center justify-center px-8 gap-6"
+      className="fixed inset-0 flex flex-col items-center justify-center px-8"
       style={{ zIndex: 10 }}
     >
-      <motion.p
-        initial={{ opacity: 0, y: 22 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+      <div
         style={{
-          fontFamily: "'Dancing Script', cursive",
-          fontSize: "clamp(22px, 6vw, 34px)",
-          color: "#8b3d7a",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           textAlign: "center",
-          lineHeight: 1.45,
+          gap: 10,
         }}
       >
-        The person I've been talking about...
-      </motion.p>
+        <AnimatePresence>
+          {step >= 1 && (
+            <motion.p
+              key="line1"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.55 }}
+              style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(24px, 6vw, 36px)",
+                color: "#8b3d7a",
+                lineHeight: 1.4,
+              }}
+            >
+              The person I've been talking about
+            </motion.p>
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {step >= 1 && (
-          <motion.p
-            key="is"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(28px, 8vw, 44px)",
-              color: "#a040a0",
-              textAlign: "center",
-              lineHeight: 1.2,
-            }}
-          >
-            ...is...
-          </motion.p>
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {step >= 2 && (
+            <motion.p
+              key="line2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.55 }}
+              style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(24px, 6vw, 32px)",
+                color: "#a040a0",
+                lineHeight: 1.2,
+              }}
+            >
+              Is you
+            </motion.p>
+          )}
+        </AnimatePresence>
 
-      <AnimatePresence>
-        {step >= 2 && (
-          <motion.p
-            key="name"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 85, damping: 10 }}
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(62px, 20vw, 108px)",
-              color: "#d04090",
-              textAlign: "center",
-              lineHeight: 1,
-              filter: "drop-shadow(0 0 28px rgba(255,100,180,0.48))",
-            }}
-          >
-            <span style={{ display: "block" }}>The person I've been talking about</span>
-            <span style={{ display: "block", marginTop: 8 }}>Is you</span>
-            <span style={{ display: "block", marginTop: 8 }}>I like you, Alyssa</span>
-          </motion.p>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {step >= 3 && (
-          <motion.p
-            key="like"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              fontSize: "clamp(30px, 9vw, 54px)",
-              color: "#a040a0",
-              textAlign: "center",
-            }}
-          >
-            I like you.
-          </motion.p>
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {step >= 3 && (
+            <motion.p
+              key="line3"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.55 }}
+              style={{
+                fontFamily: "'Dancing Script', cursive",
+                fontSize: "clamp(28px, 7vw, 44px)",
+                color: "#d04090",
+                lineHeight: 1.2,
+                textShadow: "0 0 28px rgba(255,100,180,0.48)",
+              }}
+            >
+              I like you, Alyssa
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
