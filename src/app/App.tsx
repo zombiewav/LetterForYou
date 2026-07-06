@@ -137,7 +137,7 @@ function lerpHex(h1: string, h2: string, t: number): string {
   return `#${c(r1, r2)}${c(g1, g2)}${c(b1, b2)}`;
 }
 
-const MUSIC_URL = "https://drive.google.com/uc?export=download&id=1R6dyHXWBTwnqlJdqbqjEf_gKRikCODma";
+const MUSIC_URL = "/music.mp3";
 
 function fadeAudio(audio: HTMLAudioElement, target: number, ms = 1400) {
   const steps = 30;
@@ -1047,7 +1047,7 @@ function Celebration() {
             lineHeight: 1.55,
           }}
         >
-          You just made me the<br />happiest person today ❤️
+          I guess this is where our story starts.
         </p>
       </motion.div>
     </div>
