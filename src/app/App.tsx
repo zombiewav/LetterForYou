@@ -759,7 +759,9 @@ function Reveal({ onComplete }: { onComplete: () => void }) {
               filter: "drop-shadow(0 0 28px rgba(255,100,180,0.48))",
             }}
           >
-            you, Alyssa.
+            <span style={{ display: "block" }}>The person I've been talking about</span>
+            <span style={{ display: "block", marginTop: 8 }}>Is you</span>
+            <span style={{ display: "block", marginTop: 8 }}>I like you, Alyssa</span>
           </motion.p>
         )}
       </AnimatePresence>
