@@ -137,7 +137,7 @@ function lerpHex(h1: string, h2: string, t: number): string {
   return `#${c(r1, r2)}${c(g1, g2)}${c(b1, b2)}`;
 }
 
-const MUSIC_URL = "/music.mp3";
+const MUSIC_URL = "https://drive.google.com/uc?export=download&id=1H9jNsek-DqnIBszKVGdG1E3cB2r9BQ8N";
 
 function fadeAudio(audio: HTMLAudioElement, target: number, ms = 1400) {
   const steps = 30;
