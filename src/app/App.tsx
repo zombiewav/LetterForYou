@@ -1071,6 +1071,18 @@ export default function App() {
     return () => { audio.pause(); audio.src = ""; };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.play().catch(() => {});
+        fadeRef.current = fadeAudio(audio, 0.55);
+        setMusicOn(true);
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const startMusic = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
