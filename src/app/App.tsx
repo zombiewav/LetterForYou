@@ -759,7 +759,7 @@ function Reveal({ onComplete }: { onComplete: () => void }) {
               filter: "drop-shadow(0 0 28px rgba(255,100,180,0.48))",
             }}
           >
-            Alyssa.
+            you, Alyssa.
           </motion.p>
         )}
       </AnimatePresence>
@@ -965,7 +965,7 @@ function Final({ onComplete }: { onComplete: () => void }) {
               whileHover={{ scale: 1.09 }}
               whileTap={{ scale: 0.95 }}
             >
-              Yes ❤️
+              I'd love to
             </motion.button>
             <motion.button
               onClick={onComplete}
@@ -980,7 +980,7 @@ function Final({ onComplete }: { onComplete: () => void }) {
               whileHover={{ scale: 1.09 }}
               whileTap={{ scale: 0.95 }}
             >
-              Absolutely ❤️
+              I'd love to
             </motion.button>
           </motion.div>
         )}
